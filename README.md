@@ -18,4 +18,4 @@ HandyControl 的 Drawer 控件中 Command 绑定不成功。
 
 ## Bug 示意图
 
-![](.\images\1.gif)
+![](./images/1.gif)
