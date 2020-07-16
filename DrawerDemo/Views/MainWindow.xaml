@@ -1,0 +1,47 @@
+﻿<Window x:Class="DrawerDemo.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DrawerDemo"
+        
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <hc:Drawer Name="DrawerLeft" Dock="Left" ShowMode="Push">
+                <Border Background="{DynamicResource RegionBrush}" Width="300" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
+                    <RadioButton 
+                        BorderThickness="1" 
+                        Style="{StaticResource RadioButtonIcon}" 
+                        Width="120" Margin="10" Height="60" 
+                        Command="{Binding TheTestCommand}" Content="点击我无效"/>
+                </Border>
+            </hc:Drawer>
+        </Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <ToggleButton Content="打开抽屉" IsChecked="{Binding IsOpen,ElementName=DrawerLeft}" HorizontalAlignment="Left"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <RadioButton 
+                        BorderThickness="1" 
+                        Style="{StaticResource RadioButtonIcon}" 
+                        Width="120" 
+                        Margin="10" 
+                        Height="60" 
+                        Command="{Binding TheTestCommand}"
+                        Content="点击我 有效"/>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Window>
